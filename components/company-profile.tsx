@@ -57,12 +57,12 @@ const services = [
   },
 ]
 
-const steps = [
-  { number: '01', title: 'Hubungi Kami', icon: MessageCircle },
-  { number: '02', title: 'Sampaikan Kebutuhan', icon: ClipboardCheck },
-  { number: '03', title: 'Pemeriksaan / Penjadwalan', icon: Clock3 },
-  { number: '04', title: 'Service / Instalasi', icon: Wrench },
-]
+ const steps = [
+  { number: '01', title: 'Hubungi Kami', description: 'Ceritakan kebutuhan water heater Anda kepada tim kami.', icon: MessageCircle },
+  { number: '02', title: 'Sampaikan Kebutuhan', description: 'Kami memahami detail kebutuhan dan kondisi di lokasi.', icon: ClipboardCheck },
+  { number: '03', title: 'Pemeriksaan / Penjadwalan', description: 'Tim kami menentukan langkah dan waktu layanan yang tepat.', icon: Clock3 },
+  { number: '04', title: 'Service / Instalasi', description: 'Pekerjaan dilakukan rapi, aman, dan sesuai kebutuhan.', icon: Wrench },
+  ]
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -303,7 +303,6 @@ function AristonSection() {
           <h2>Ariston Service Center <span>(ASC) Malang</span></h2>
           <p>CV NOKITA KARYA bekerja sama dengan Ariston dalam layanan water heater di Malang. Hubungi kami untuk informasi instalasi, service, perbaikan, atau bantuan terkait garansi.</p>
         </div>
-        <a className="button button-outline-light" href="#kontak">Hubungi Tim Kami <ArrowUpRight aria-hidden="true" size={16} /></a>
       </div>
     </section>
   )
@@ -321,15 +320,18 @@ function ProcessSection() {
           <p>Alur komunikasi yang sederhana membantu kami memahami kebutuhan Anda dengan tepat.</p>
         </div>
         <div className="process-grid">
-          {steps.map(({ number, title, icon: Icon }, index) => (
-            <div className="process-step" key={number}>
+          {steps.map(({ number, title, description, icon: Icon }) => (
+            <article className="process-step" key={number}>
               <div className="process-step-top">
                 <span className="process-icon"><Icon aria-hidden="true" size={19} strokeWidth={1.7} /></span>
-                <span className="process-number">{number}</span>
+                <span className="process-number">{number} / 04</span>
               </div>
               <h3>{title}</h3>
-              {index < steps.length - 1 && <span aria-hidden="true" className="process-connector" />}
-            </div>
+              <p>{description}</p>
+              <a aria-label={`Pelajari proses ${title}`} className="process-link" href="#kontak">
+                Konsultasi <ArrowUpRight aria-hidden="true" size={15} />
+              </a>
+            </article>
           ))}
         </div>
       </div>
@@ -394,30 +396,33 @@ function ServiceAreaSection() {
         <div className="area-copy">
           <Eyebrow>AREA LAYANAN</Eyebrow>
           <h2>Dari Malang,<br />untuk sekitar.</h2>
-          <p>Berbasis layanan di Malang, CV NOKITA KARYA melayani kebutuhan water heater di area sekitar sesuai cakupan dan jadwal layanan.</p>
+          <p>Berbasis di Jl. Laksda Adi Sucipto GG 10 No 19, CV NOKITA KARYA melayani kebutuhan water heater di Malang dan area sekitar sesuai cakupan dan jadwal layanan.</p>
           <div className="area-pills"><span>Malang</span><span>Kabupaten Malang</span><span>Batu</span></div>
         </div>
-        <div className="area-card">
-          <div className="area-map-art" aria-hidden="true">
-            <div className="map-grid-lines" />
-            <span className="map-route map-route-one" />
-            <span className="map-route map-route-two" />
-            <span className="map-route map-route-three" />
-            <span className="map-pin map-pin-main"><MapPin size={19} fill="currentColor" /></span>
-            <span className="map-pin map-pin-small map-pin-a" />
-            <span className="map-pin map-pin-small map-pin-b" />
-            <span className="map-pin map-pin-small map-pin-c" />
-            <span className="map-label map-label-main">MALANG</span>
-            <span className="map-label map-label-a">BATU</span>
-            <span className="map-label map-label-b">KAB. MALANG</span>
-            <span className="map-watermark">NOKITA<br />KARYA</span>
+          <div className="area-card">
+          <div className="area-map-frame">
+          <iframe
+            className="area-map-embed"
+            title="Peta lokasi CV Nokita Karya"
+            src="https://www.google.com/maps?q=Jl.+Laksda+Adi+Sucipto+GG+10+No+19,+Malang,+Jawa+Timur&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <a className="area-map-link" href="https://maps.app.goo.gl/2XZst1kTSzvZn5KU6" target="_blank" rel="noreferrer" aria-label="Buka lokasi CV Nokita Karya di Google Maps" />
+          </div>
+          <div className="area-photo-row">
+            <img alt="Gang menuju lokasi CV Nokita Karya di Jalan Laksda Adi Sucipto" src="/images/gang-kantor-nokita.jpeg" />
+            <div>
+              <strong>Petunjuk lokasi kantor</strong>
+              <small> Masuk melalui Gang 10, Jalan Laksda Adi Sucipto.</small>
+            </div>
           </div>
           <div className="area-card-bottom">
             <span className="area-location-icon"><MapPin aria-hidden="true" size={18} /></span>
-            <span><strong>Malang & area sekitar</strong><small>Hubungi kami untuk memastikan jangkauan layanan.</small></span>
-            <a aria-label="Hubungi kami mengenai area layanan" href="#kontak"><ArrowUpRight size={17} /></a>
+            <span><strong>Jl. Laksda Adi Sucipto GG 10 No 19</strong><small>Malang, Jawa Timur</small></span>
+            <a aria-label="Buka lokasi CV Nokita Karya di Google Maps" href="https://maps.app.goo.gl/2XZst1kTSzvZn5KU6" target="_blank" rel="noreferrer"><ArrowUpRight size={17} /></a>
           </div>
-        </div>
+          </div>
       </div>
     </section>
   )
@@ -447,7 +452,6 @@ function ContactSection() {
     { label: 'TELEPON', value: '085103439170', icon: Phone, href: 'tel:085103439170' },
     { label: 'EMAIL', value: 'nokita504@gmail.com', icon: ArrowUpRight, href: 'mailto:nokita504@gmail.com' },
     { label: 'LOKASI', value: 'Malang, Jawa Timur', icon: MapPin, href: '#area-layanan' },
-    { label: 'JAM OPERASIONAL', value: '08.00-16.00', icon: Clock3, href: WHATSAPP_URL },
   ]
 
   return (
@@ -462,6 +466,14 @@ function ContactSection() {
           </a>
         </div>
         <div className="contact-list">
+          <div className="contact-hours">
+            <span className="contact-row-icon"><Clock3 aria-hidden="true" size={18} strokeWidth={1.7} /></span>
+            <div>
+              <h3>Jam Operasional</h3>
+              <p>Operasional layanan 08.00 - 16.00</p>
+              <p>Operasional customer service 24 jam</p>
+            </div>
+          </div>
           {contactItems.map(({ label, value, icon: Icon, href }) => (
             <a className="contact-row" href={href} key={label}>
               <span className="contact-row-icon"><Icon aria-hidden="true" size={18} strokeWidth={1.7} /></span>
@@ -490,14 +502,13 @@ function SiteFooter() {
         </div>
         <div className="footer-contact-column">
           <h3>HUBUNGI KAMI</h3>
-          <a href={WHATSAPP_URL} rel="noreferrer" target="_blank">[085103439170]</a>
-          <a href="mailto:[Email]">[nokita504@gmail.com]</a>
-          <a href="#kontak">[08.00-16.00]</a>
+          <a href={WHATSAPP_URL} rel="noreferrer" target="_blank">085103439170</a>
+          <a href="mailto:[Email]">nokita504@gmail.com</a>
+          <a href="#kontak">08.00-16.00</a>
         </div>
         <div className="footer-asc-card">
           <span className="footer-asc-icon"><BadgeCheck size={20} /></span>
           <span><strong>Ariston Service Center</strong><small>Area Malang</small></span>
-          <ArrowUpRight aria-hidden="true" size={16} />
         </div>
       </div>
       <div className="container footer-bottom">
