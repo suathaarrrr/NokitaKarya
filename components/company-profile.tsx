@@ -84,7 +84,7 @@ function BrandMark({ light = false }: { light?: boolean }) {
       />
       <span className="brand-copy">
         <strong>CV NOKITA KARYA</strong>
-        <span>ARISTON SERVICE CENTER</span>
+        <span>AUTHORIZED SERVICE CENTER</span>
       </span>
     </a>
   )
@@ -140,7 +140,7 @@ function HeroSection() {
         <div className="hero-copy">
           <div className="hero-label">
             <span className="hero-label-mark"><Droplets size={14} /></span>
-            ARISTON SERVICE CENTER · MALANG
+            AUTHORIZED SERVICE CENTER · MALANG
           </div>
           <h1>
             Nyaman di rumah,
@@ -162,7 +162,7 @@ function HeroSection() {
           </div>
           <div className="hero-note">
             <span className="hero-note-icon"><MapPin aria-hidden="true" size={16} /></span>
-            <span>Melayani Malang, Kabupaten Malang & Batu</span>
+            <span>Melayani Kota Malang, Kabupaten Malang & Batu</span>
           </div>
         </div>
         <div className="hero-visual">
@@ -199,7 +199,7 @@ function HeroSection() {
 
 function TrustStrip() {
   const highlights = [
-    { icon: BadgeCheck, title: 'Ariston Service Center', subtitle: 'ASC Malang' },
+    { icon: BadgeCheck, title: 'Authorized Service Center', subtitle: 'ASC Malang' },
     { icon: Settings2, title: 'Layanan Profesional', subtitle: 'Instalasi & perawatan' },
     { icon: MapPin, title: 'Area Layanan Lokal', subtitle: 'Malang dan sekitarnya' },
   ]
@@ -239,7 +239,7 @@ function AboutSection() {
           <Eyebrow>TENTANG KAMI</Eyebrow>
           <h2>Mitra layanan water heater yang hadir dekat dengan Anda.</h2>
           <p className="about-intro">
-            CV NOKITA KARYA menyediakan layanan water heater dan bekerja sama dengan Ariston sebagai Ariston Service Center (ASC) di Malang.
+            CV NOKITA KARYA menyediakan layanan water heater dan bekerja sama dengan Ariston sebagai Authorized Service Center (ASC) di Malang.
           </p>
           <p className="body-muted">
             Kami membantu pemilik rumah, keluarga, hotel, apartemen, dan properti di Malang serta area sekitarnya melalui layanan instalasi, service, perbaikan, dan bantuan terkait garansi.
@@ -249,7 +249,7 @@ function AboutSection() {
             <div className="why-list">
               <div><span className="why-check"><Check size={13} /></span><span>Fokus pada kebutuhan water heater Ariston</span></div>
               <div><span className="why-check"><Check size={13} /></span><span>Alur layanan yang jelas dan komunikatif</span></div>
-              <div><span className="why-check"><Check size={13} /></span><span>Melayani Malang dan wilayah sekitarnya</span></div>
+              <div><span className="why-check"><Check size={13} /></span><span>Melayani area Malang dan wilayah sekitarnya</span></div>
             </div>
           </div>
           <a className="text-link" href="#kontak">Kenali layanan kami <ArrowRight aria-hidden="true" size={16} /></a>
@@ -300,7 +300,7 @@ function AristonSection() {
         </div>
         <div className="ariston-copy">
           <Eyebrow>KERJA SAMA LAYANAN</Eyebrow>
-          <h2>Ariston Service Center <span>(ASC) Malang</span></h2>
+          <h2>Authorized Service Center <span>(ASC) Malang</span></h2>
           <p>CV NOKITA KARYA bekerja sama dengan Ariston dalam layanan water heater di Malang. Hubungi kami untuk informasi instalasi, service, perbaikan, atau bantuan terkait garansi.</p>
         </div>
       </div>
@@ -372,7 +372,7 @@ function GallerySection() {
             <Eyebrow>DOKUMENTASI</Eyebrow>
             <h2>Ruang kerja kami.</h2>
           </div>
-          <p>Gambaran kegiatan instalasi dan layanan water heater. Dokumentasi dapat diperbarui sesuai pekerjaan terbaru.</p>
+          <p>Gambaran kegiatan instalasi dan layanan water heater. </p>
         </div>
         <div className="gallery-grid">
           {gallery.map((item) => (
@@ -508,7 +508,7 @@ function SiteFooter() {
         </div>
         <div className="footer-asc-card">
           <span className="footer-asc-icon"><BadgeCheck size={20} /></span>
-          <span><strong>Ariston Service Center</strong><small>Area Malang</small></span>
+          <span><strong>Authorized Service Center</strong><small>Area Malang</small></span>
         </div>
       </div>
       <div className="container footer-bottom">
